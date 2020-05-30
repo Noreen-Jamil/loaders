@@ -1,0 +1,569 @@
+*{
+			box-sizing: border-box;
+			font-family: "Open Sans";
+			font-weight: 300;
+		}
+		body{
+			background: linear-gradient(135deg,  #3023ae 0%,#c86dd7 100%);
+			
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 110vh;
+			
+		}
+		#grid-container{
+			display: inline-grid;
+			grid-template-columns:180px 180px 180px 180px ;
+			grid-template-rows: 180px 180px 180px;
+			box-shadow:0px 0px 4px 0px rgba(0,0,0,0.37);
+			
+		}
+		#grid-container>div{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+		}
+		/* item 1*/
+
+		#item-1{
+			background-color: #1ABC9C;
+			position: relative;
+		}
+		#item-1>div{
+			display: inline-block;
+			background-color:white;
+			width:8px;
+			height:50px;
+			border-radius:2px;
+			animation: bars 1.5s infinite linear;
+			position: absolute;
+			bottom:40%;
+		}
+		#item-1>div:nth-child(2){
+			animation-delay:-0.5s;
+			left:61px;
+		}
+		#item-1>div:nth-child(3){
+			animation-delay:-0.8s;
+			left:73px;
+		}
+		#item-1>div:nth-child(4){
+			animation-delay:-0.3s;
+			left:98px;
+		}
+		@keyframes bars{
+			0%{height:10px;}
+			20%{height:40px;}
+			40%{height:10px;}
+			60%{height:60px;}
+			80%{height:30px;}
+			100%{height:10px;}
+		}
+		/* item 2*/
+
+		#item-2{
+			background-color: #34495E;
+		}
+		#item-2>div{
+			border-radius: 50px;
+			width:20px;
+			height:20px;
+			border:1px solid white;
+			position: absolute;
+			
+		}
+		#item-2>div:nth-child(1){
+			animation: fadein 1.5s infinite linear;
+			border:2px solid white;
+			
+		}
+		#item-2>div:nth-child(2),#item-2>div:nth-child(3){
+		 
+		 	
+		}
+		#item-2>div:nth-child(2){
+		 	animation:loader2 1.5s infinite linear;	
+		 	animation-delay:-0.7s;
+		}
+		#item-2>div:nth-child(3){
+		 	
+		 	animation:loader2 1.5s infinite linear;	
+
+		}
+		@keyframes fadein{
+			0%{
+				transform: scale(1);
+				
+			}
+			
+			50%{
+				transform: scale(0.2);
+				
+			}
+			100%{
+					transform: scale(1);
+			}
+		}
+		@keyframes loader2{
+			0%{
+				transform: scale(1);
+				opacity: 1
+			}
+			50%{
+				//transform: scale(1.5);
+				//opacity: 0.7;
+			}
+			100%{
+				transform: scale(3);
+				opacity: 0;
+			}
+		
+		}
+		#item-3{
+			 background-color: #F39C12;
+			 flex-direction: column;
+		}
+
+		#inner-wrapper3{
+		display: grid;
+		grid-template-rows: 12px 12px 12px;
+		grid-template-columns: 12px 12px 12px;
+		grid-gap: 2px 2px;
+		}
+    	#inner-wrapper3>div{
+			background-color: white;
+			opacity: 0.5;
+			border:1px solid white;
+			border-radius:50px;
+			animation: loader3 1s infinite linear;
+			animation-delay: 0;
+			}
+		
+		#inner-wrapper3> div:nth-child(1) {
+    		animation-delay: -0.3s;
+            }
+		#inner-wrapper3 > div:nth-child(2) {
+		    animation-delay: -0.3s;
+		           }
+		#inner-wrapper3 > div:nth-child(3) {
+		   	animation-delay: -0.3s;
+		          }
+		#inner-wrapper3 > div:nth-child(4) {
+		  	animation-delay: -0.6s;
+		            }
+		#inner-wrapper3> div:nth-child(5) {
+		   	
+		   	animation-delay: 0s;
+		    
+		           }
+		#inner-wrapper3 > div:nth-child(6) {
+		    animation-delay: -0.6s;
+		           }
+		#inner-wrapper3 > div:nth-child(7) {
+		    animation-delay: -0.6s;
+		           }
+		#inner-wrapper3 > div:nth-child(8) {
+		    animation-delay: -0.9s;
+		             }
+		#inner-wrapper3 > div:nth-child(9) {
+		    animation-delay: -0.9s;
+		          }
+		@keyframes loader3{
+			50%{
+				opacity:0.7;
+			}
+			100%{
+				opacity: 1;
+			}
+		}
+		
+		#item-4{
+			background-color: #9B59B6;
+		}
+		#item-4>.heart:nth-child(1){
+			transform: rotate(-65deg);
+			margin-top: 10px;
+		}
+		#item-4>.heart:nth-child(2){
+			animation-delay: -0.6s;
+		}
+		#item-4>.heart:nth-child(3){
+			transform: rotate(-25deg);
+			animation-delay: -0.12s;
+			margin-top: 10px;
+
+		}
+		
+		.heart {
+			background-color: white;
+			  height: 20px;
+			  transform: rotate(-45deg);
+			  width: 20px;
+			  margin-right: 10px;
+			  opacity: 0.7;
+			 animation: heart 1.5s infinite linear; 
+			
+				}
+		.heart:before,
+		.heart:after {
+				content: "";
+				background-color: white;
+				border-radius: 50%;
+				height: 20px;
+				position: absolute;
+				width: 20px;
+				}
+			.heart:before {
+			  top: -13px;
+			  left: 0;
+			  
+			}
+			.heart:after {
+			  
+			  left: 13px;
+			 
+			}
+			@keyframes heart{
+				100%{
+					opacity: 1;
+				}
+			}
+		#item-5{
+			 background-color: #3498DB;
+		}
+		#item-5>div{
+			border-radius: 50px;
+			width:50px;
+			height:50px;
+			border:3px solid #B6B5B4;
+			border-top-color:white;
+			animation: rotate 1s infinite linear;
+		}
+		@keyframes rotate{
+			to{
+				transform:rotate(360deg);
+		}
+	}
+		#item-6{
+			background-color: #E74C3C;
+		}
+		#item-6>div{
+			border-radius: 50px;
+			width:15px;
+			height:15px;
+			background-color: #F0EEE3 ;
+			margin-right: 10px;
+			animation: loader6 0.5s infinite alternate;
+		}
+		#item-6>div:nth-child(2){
+					animation-direction: ease-out;
+					animation-delay: 0.5s;
+				}
+		#item-6>div:nth-child(1),#item-6>div:nth-child(3){
+					animation-direction: ease-in;
+				}
+		@keyframes loader6{
+			from{
+				opacity:0.3;
+				width:8px;
+				height:8px;
+			}
+			to{
+				opacity:1;
+				width:15px;
+				height:15px;
+			}
+		}
+		#item-7{
+			background-color: #2ECC71;
+		}
+		
+		#item-7>#inner-wrapper{
+			position: relative;
+			top:-10px;
+			left:-10px;
+		}
+		#inner-wrapper>div{
+			width: 10px;
+			height:10px;
+			border:1px solid white;
+			border-radius:50px;
+			position: absolute;
+			animation:loader7 1.5s infinite linear;
+			
+		}
+		/* 1.5 sec divided by 8= 0.1875 then multiply 0.1875*n+1 for each div*/
+		#inner-wrapper>div:nth-child(1){
+			top: 25px;
+    		left: 0;
+    		animation-delay:-0.187s;
+   
+		}
+		#inner-wrapper>div:nth-child(2){
+			top: 17.04545px;
+    		left: 17.04545px;
+    		animation-delay:-0.374s; 
+   
+		}
+		#inner-wrapper>div:nth-child(3){
+			top: 0;
+    		left: 25px;
+    		animation-delay:-0.561s; 
+  
+		}
+		#inner-wrapper>div:nth-child(4){
+			top: -17.04545px;
+    		left: 17.04545px;
+    		animation-delay:-0.784s; 
+		}
+		#inner-wrapper>div:nth-child(5){
+			top: -25px;
+    		left: 0;
+    		animation-delay:-0.935s; 
+		}
+		#inner-wrapper>div:nth-child(6){
+			top: -17.04545px;
+    		left: -17.04545px;
+			animation-delay:-1.122s; 
+		}
+		#inner-wrapper>div:nth-child(7){
+			top: 0;
+    		left: -25px;
+    		animation-delay:-1.309s; 
+		}
+		#inner-wrapper>div:nth-child(8){
+			top: 17.04545px;
+    		left: -17.04545px;
+    		animation-delay:-1.496s; 
+    		
+		}
+		@keyframes loader7{
+			
+			90%{
+				background-color: transparent;
+				/* to avoid background color prepearing for animation by keyframes*/
+			}
+			100%{
+				background-color: white;
+			}
+		}
+		#item-8{
+			background-color: #2C3E50;
+			position: relative;
+		}
+		#item-8>div{
+			border-radius: 50px;
+			width:50px;
+			height:50px;
+			border:4px solid white;
+			animation:loader8 1.5s infinite linear;
+			position: absolute;
+		}
+		
+		
+		 #item-8>div:nth-child(2){
+			animation-delay: -0.9s;
+			/* through neg value loader animates from starting avoiding delay in the start*/
+		}
+		@keyframes loader8{
+			from{
+				transform: scale(0,0);
+				opacity: 0.8;
+			}
+			to{
+				transform: scale(1,1);
+				opacity: 0;
+			}
+		}
+		
+		#item-9{
+			background-color: #F1C40F;
+		}
+		#item-9>div{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border:9px dotted white;
+			width:50px;
+			height:50px;
+			border-radius:50px;
+			animation: revolve 10s infinite linear;
+		}
+		@keyframes revolve{
+			to{
+				transform: rotate(360deg);
+			}
+		}
+		#item-9>div>div{
+			border:8px dotted white;
+			width:25px;
+			height:25px;
+			border-radius:50px;
+			animation: reverserevolve 3s infinite linear;
+		}
+		@keyframes reverserevolve{
+			to{
+				transform: rotate(-360deg);
+			}
+		}
+		#item-10{
+			background-color: #8E44AD;
+		}
+		#item-10>div{
+			border-radius: 50px;
+			width:50px;
+			height:50px;
+			border:3px solid transparent;
+			border-top:3px solid white;
+			border-left:white;
+			animation: spin 1s infinite linear;
+		}
+		@keyframes spin{
+			to{
+				transform:rotate(360deg);
+			}
+		}
+		#item-11{
+			background-color: #2980B9;
+		}
+		
+		#item-11>div{
+			display: inline-block;
+			background-color:white;
+			width:6px;
+			height:50px;
+			border-radius:2px;
+			animation: loader11 1s  infinite ease-in;
+			margin-right: 4px;
+			animation-fill-mode: both;
+		}
+		#item-11>div:nth-child(1),#item-11>div:nth-child(5){
+			animation-delay: -0.7s;
+			
+		}
+		#item-11>div:nth-child(2),#item-11>div:nth-child(4){
+			animation-delay:-0.85s ;
+			height:43px;
+		}
+		#item-11>div:nth-child(3){
+			height:38px;
+		}
+		@keyframes loader11{
+
+			50%{
+				transform: scaleY(0.3);
+			}
+			100%{
+				transform: scaleY(1);
+			}
+		}
+		
+		#item-12{
+			background-color: #E74C3C;
+		}
+		
+		#inner-wrapper12{
+			position: relative;
+			left:-30px;
+			top:-30px;
+			 /* actual point of absolute divs by commenting above left and top values we can know the actual point of divs for setting their values in keyframes
+			 transform: translate(0px, 0px);*/
+		}
+    	#inner-wrapper12>div{
+			position: absolute;
+			width:10px;
+			height:10px;
+			border:1px solid white;
+			border-radius:50px;
+			}
+		#inner-wrapper12>div:nth-child(1){
+			top:50px;
+			
+			animation:load12child1 2s infinite linear;
+		}
+		#inner-wrapper12>div:nth-child(2){
+			left:25px;
+			animation:load12child2 2s infinite linear;
+			
+		}
+		#inner-wrapper12>div:last-child{
+			animation:load12child3 2s infinite linear;
+			top:50px;
+			left:50px;
+		}
+		@keyframes load12child1{
+			33%{
+				/* here we are setting values a/c to x-axis and y-axis
+				every div has itx x and y axis 0,0*/
+				transform: translate(25px, -50px);
+				/* here x-axis=25px and y-axis= -50px*/
+			
+			}
+			66%{
+				transform: translate(50px, 0px);
+			}
+			99%{
+				transform: translate(0px ,0px);
+			}
+		}
+		@keyframes load12child2{
+			33%{
+				/* here we are setting values a/c to x-axis and y-axis*/
+				transform: translate(25px, 50px);
+			
+			}
+			66%{
+				transform: translate(-25px, 50px);
+			}
+			99%{
+				transform: translate(0px, 0px);
+			}
+		}
+		@keyframes load12child3{
+			33%{
+				/* here we are setting values a/c to x-axis and y-axis*/
+				transform: translate(-50px, 0px);
+			
+			}
+			66%{
+				transform: translate(-25px, -50px);
+	}
+			99%{
+				transform: translate(0px, 0px);
+			}
+		}
+		body>div:nth-child(2){
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding-top:3% ;
+			border:1px solid white;
+		}
+		
+		button{
+			background-color: transparent;
+			color:white;
+			width: 150px;
+            height: 46px;
+            border-radius:5px;
+            border:2px solid white;
+            outline: none;
+           
+		}
+		i{
+			margin-right: 8px;
+			font-size: 22px;
+		}
+		
+		button:hover{
+			cursor: pointer;
+
+		}
+		p{
+			color:white;
+			margin-bottom: 0; 
+		}
+	
