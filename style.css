@@ -5,20 +5,20 @@
 		}
 		body{
 			background: linear-gradient(135deg,  #3023ae 0%,#c86dd7 100%);
-			
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			height: 110vh;
+			height: 100vh;
+			padding-bottom: 5%;
 			
 		}
 		#grid-container{
 			display: inline-grid;
-			grid-template-columns:180px 180px 180px 180px ;
-			grid-template-rows: 180px 180px 180px;
+			grid-template-columns:repeat(4,160px);
+			grid-template-rows: repeat(3,160px);
 			box-shadow:0px 0px 4px 0px rgba(0,0,0,0.37);
-			
+			margin-top: 5%;
 		}
 		#grid-container>div{
 			display: flex;
@@ -381,31 +381,40 @@
 		
 		#item-9{
 			background-color: #F1C40F;
+			position: relative;
 		}
-		#item-9>div{
-			display: flex;
+		#item-9>div:nth-child(1){
+			/*display: flex;
 			justify-content: center;
-			align-items: center;
+			align-items: center;*/
 			border:9px dotted white;
-			width:50px;
-			height:50px;
+			width:55px;
+			height:55px;
 			border-radius:50px;
-			animation: revolve 10s infinite linear;
+			animation: loader9 10s infinite linear;
 		}
-		@keyframes revolve{
+		@keyframes loader9{
 			to{
 				transform: rotate(360deg);
 			}
 		}
-		#item-9>div>div{
-			border:8px dotted white;
-			width:25px;
-			height:25px;
-			border-radius:50px;
-			animation: reverserevolve 3s infinite linear;
+		#inner9{
+			position: absolute;
+			display: inline-grid;
+			grid-template-columns: 10px 10px;
+			grid-template-rows: 10px 10px;
+			grid-gap: 2px 2px;
+			left:80px;
+			top:80px;
+			animation:innergrid 3s infinite linear;
 		}
-		@keyframes reverserevolve{
-			to{
+		#inner9>div{
+			border-radius:50px;
+			background-color: white;
+			
+		}
+		@keyframes innergrid{
+			100%{
 				transform: rotate(-360deg);
 			}
 		}
@@ -540,7 +549,6 @@
 			justify-content: space-between;
 			align-items: center;
 			padding-top:3% ;
-			
 		}
 		
 		button{
@@ -551,6 +559,7 @@
             border-radius:5px;
             border:2px solid white;
             outline: none;
+            margin-right: 15px;
            
 		}
 		i{
